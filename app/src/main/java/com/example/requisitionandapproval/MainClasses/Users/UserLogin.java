@@ -9,7 +9,7 @@ import com.example.requisitionandapproval.DashBoards.ManagerDashBoard;
 import com.example.requisitionandapproval.R;
 import com.example.requisitionandapproval.DashBoards.SiteManagerDashboard;
 import com.example.requisitionandapproval.DashBoards.SupplierDashboard;
-import com.example.requisitionandapproval.model.userLogin;
+import com.example.requisitionandapproval.model.APIModels.userLogin;
 import com.example.requisitionandapproval.Notification.progressBar;
 import com.google.gson.Gson;
 

@@ -4,24 +4,19 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.requisitionandapproval.MainClasses.SiteManager.goods_receipt;
 import com.example.requisitionandapproval.R;
-import com.example.requisitionandapproval.model.ApproveModel;
-import com.example.requisitionandapproval.model.orderModel;
+import com.example.requisitionandapproval.model.AdaptorModels.orderModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
     orderModel[] orderModels;

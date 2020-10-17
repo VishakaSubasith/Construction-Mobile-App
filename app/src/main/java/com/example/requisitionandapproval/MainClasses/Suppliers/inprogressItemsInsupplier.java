@@ -13,17 +13,11 @@ import android.widget.Toast;
 
 import com.example.requisitionandapproval.ApiClient.ApiClient;
 import com.example.requisitionandapproval.ApiClient.Endpoints;
-import com.example.requisitionandapproval.MainClasses.SiteManager.Approve_Requisition;
 import com.example.requisitionandapproval.R;
-import com.example.requisitionandapproval.adapterClasses.ApproveAdapter;
 import com.example.requisitionandapproval.adapterClasses.InprogressAdaptor;
-import com.example.requisitionandapproval.model.ApproveModel;
-import com.example.requisitionandapproval.model.GetReqDetailsByID;
-import com.example.requisitionandapproval.model.GetReqNumbers;
-import com.example.requisitionandapproval.model.InprogressResponseModel;
-import com.example.requisitionandapproval.model.ReqApprovalModel;
-import com.example.requisitionandapproval.model.inprogressItemIDModel;
-import com.example.requisitionandapproval.model.orderItemcls;
+import com.example.requisitionandapproval.model.APIModels.InprogressResponseModel;
+import com.example.requisitionandapproval.model.APIModels.inprogressItemIDModel;
+import com.example.requisitionandapproval.model.AdaptorModels.orderItemcls;
 
 import java.util.ArrayList;
 import java.util.HashMap;

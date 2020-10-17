@@ -13,10 +13,9 @@ import com.example.requisitionandapproval.ApiClient.ApiClient;
 import com.example.requisitionandapproval.ApiClient.Endpoints;
 import com.example.requisitionandapproval.R;
 import com.example.requisitionandapproval.adapterClasses.place_Item_listAdapter;
-import com.example.requisitionandapproval.model.getOrderedItemList;
-import com.example.requisitionandapproval.model.orderItemcls;
+import com.example.requisitionandapproval.model.APIModels.getOrderedItemList;
+import com.example.requisitionandapproval.model.AdaptorModels.orderItemcls;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 

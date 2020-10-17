@@ -1,17 +1,10 @@
-package com.example.requisitionandapproval.model;
+package com.example.requisitionandapproval.model.AdaptorModels;
 
-public class supplierModel {
-
-    private String userID;
+public class userRegisterModel {
     private String username;
     private String password;
     private String email;
     private String userType;
-
-
-    public String getUserID() {
-        return userID;
-    }
 
     public String getUsername() {
         return username;

@@ -17,12 +17,13 @@ import android.widget.Toast;
 
 import com.example.requisitionandapproval.ApiClient.ApiClient;
 import com.example.requisitionandapproval.ApiClient.Endpoints;
+import com.example.requisitionandapproval.ConstantsClasses.MessagesClass;
 import com.example.requisitionandapproval.R;
 import com.example.requisitionandapproval.adapterClasses.ApproveAdapter;
-import com.example.requisitionandapproval.model.ApproveModel;
-import com.example.requisitionandapproval.model.GetReqDetailsByID;
-import com.example.requisitionandapproval.model.GetReqNumbers;
-import com.example.requisitionandapproval.model.ReqApprovalModel;
+import com.example.requisitionandapproval.model.AdaptorModels.ApproveModel;
+import com.example.requisitionandapproval.model.APIModels.GetReqDetailsByID;
+import com.example.requisitionandapproval.model.APIModels.GetReqNumbers;
+import com.example.requisitionandapproval.model.APIModels.ReqApprovalModel;
 import com.example.requisitionandapproval.Notification.progressBar;
 import com.google.gson.Gson;
 
@@ -52,7 +53,7 @@ public class Approve_Requisition extends AppCompatActivity {
     private Endpoints endpoints;
     private String Base_URL = apiClient.getBASE_URL();
     String name;
-
+    MessagesClass messagesClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -234,7 +235,7 @@ public class Approve_Requisition extends AppCompatActivity {
                                 String RequisitionId = reqId.getSelectedItem().toString();
                                 getdetails_from_reqID(RequisitionId);
                                 new SweetAlertDialog(Approve_Requisition.this,SweetAlertDialog.SUCCESS_TYPE)
-                                        .setTitleText("Order Approval Navigates to Manager")
+                                        .setTitleText(messagesClass.NavigatesToManager)
                                         .show();
 
 
@@ -248,8 +249,6 @@ public class Approve_Requisition extends AppCompatActivity {
                                 it.putExtra("reqid",RequisitionId);
                                 it.putExtra("name1",name);
                                 startActivity(it);
-
-                                System.out.println("Navigate to sitemanager payment");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -269,7 +268,7 @@ public class Approve_Requisition extends AppCompatActivity {
             public void onFailure(Call<ReqApprovalModel> call, Throwable t) {
                 System.out.println("ERROR::"+t);
                 new SweetAlertDialog(Approve_Requisition.this,SweetAlertDialog.ERROR_TYPE)
-                        .setTitleText("Order Approval Unsuccessful")
+                        .setTitleText(messagesClass.orderSuccess)
                         .show();
 
             }
@@ -297,7 +296,7 @@ public class Approve_Requisition extends AppCompatActivity {
                         getdetails_from_reqID(RequisitionId);
 
                         new SweetAlertDialog(Approve_Requisition.this,SweetAlertDialog.SUCCESS_TYPE)
-                                .setTitleText("Order Decline Successful")
+                                .setTitleText(messagesClass.orderDecline)
                                 .show();
                     }
 

@@ -13,11 +13,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.requisitionandapproval.MainClasses.Order.place_purchase_order_Item_List;
 import com.example.requisitionandapproval.MainClasses.Suppliers.SupplierProfile;
 import com.example.requisitionandapproval.R;
-import com.example.requisitionandapproval.model.SupplierOrderMdel;
-import com.example.requisitionandapproval.model.orderItemcls;
+import com.example.requisitionandapproval.model.AdaptorModels.SupplierOrderMdel;
 
 import java.util.ArrayList;
 

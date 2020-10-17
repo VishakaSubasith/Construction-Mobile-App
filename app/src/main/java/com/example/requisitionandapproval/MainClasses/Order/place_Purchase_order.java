@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -21,10 +19,10 @@ import android.widget.Toast;
 
 import com.example.requisitionandapproval.ApiClient.ApiClient;
 import com.example.requisitionandapproval.ApiClient.Endpoints;
+import com.example.requisitionandapproval.ConstantsClasses.MessagesClass;
 import com.example.requisitionandapproval.MainClasses.SiteManager.place_purchase_Order_List;
 import com.example.requisitionandapproval.R;
-import com.example.requisitionandapproval.model.supplierModel;
-import com.example.requisitionandapproval.Notification.progressBar;
+import com.example.requisitionandapproval.model.APIModels.supplierModel;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -52,6 +50,7 @@ public class place_Purchase_order extends AppCompatActivity {
     TextView uname;
     RadioButton card,cOnd;
     RadioGroup paymentradiogroup;
+    MessagesClass messagesClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,10 +86,10 @@ public class place_Purchase_order extends AppCompatActivity {
         cardpaymetlayout.setVisibility(View.GONE);
 
 
-        String []city = {"Jaffna","Kilinochchi","Mannar","Mullaitivu","Vavuniya","Puttalam","Kurunegala","Gampaha","Colombo","Kalutara","Anuradhapura","Polonnaruwa","Matale","Kandy","Nuwara Eliya","Kegalle","Ratnapura","Trincomalee","Batticaloa","Ampara","Badulla","Monaragala","Hambantota","Matara","Galle"};
+
 
         Spinner selectcity = findViewById(R.id.selectcity);
-        ArrayAdapter<String> cityadapter = new ArrayAdapter<String>(place_Purchase_order.this, android.R.layout.simple_spinner_item, city);
+        ArrayAdapter<String> cityadapter = new ArrayAdapter<String>(place_Purchase_order.this, android.R.layout.simple_spinner_item, messagesClass.city);
         cityadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         selectcity.setAdapter(cityadapter);
 
@@ -156,7 +155,7 @@ public class place_Purchase_order extends AppCompatActivity {
                 if (addline1.getText().toString().isEmpty() || addline2.getText().toString().isEmpty()|| requireDate.getText().toString().isEmpty()|| Suplier.getCount()==0){
                     //Toast.makeText(place_Purchase_order.this,"Please Fill All fields",Toast.LENGTH_LONG).show();
                     new SweetAlertDialog(place_Purchase_order.this,SweetAlertDialog.WARNING_TYPE)
-                            .setTitleText("Please Fill All fields")
+                            .setTitleText(messagesClass.requredField)
                             .show();
                 }else{
 
@@ -168,7 +167,7 @@ public class place_Purchase_order extends AppCompatActivity {
                         }else{
                             placeOrder();
                             new SweetAlertDialog(place_Purchase_order.this,SweetAlertDialog.SUCCESS_TYPE)
-                                    .setTitleText("Order Placed Successful")
+                                    .setTitleText(messagesClass.orderPlacedSuccess)
                                     .show();
                         }
 
@@ -181,7 +180,7 @@ public class place_Purchase_order extends AppCompatActivity {
                         }else{
                             placeOrder();
                             new SweetAlertDialog(place_Purchase_order.this,SweetAlertDialog.SUCCESS_TYPE)
-                                    .setTitleText("Order Placed Successful")
+                                    .setTitleText(messagesClass.orderPlacedSuccess)
                                     .show();
                         }
 

@@ -15,10 +15,9 @@ import com.example.requisitionandapproval.ApiClient.ApiClient;
 import com.example.requisitionandapproval.ApiClient.Endpoints;
 import com.example.requisitionandapproval.R;
 import com.example.requisitionandapproval.adapterClasses.InprogressAdaptor;
-import com.example.requisitionandapproval.model.InprogressResponseModel;
-import com.example.requisitionandapproval.model.deliverItemModel;
-import com.example.requisitionandapproval.model.inprogressItemIDModel;
-import com.example.requisitionandapproval.model.orderItemcls;
+import com.example.requisitionandapproval.model.APIModels.InprogressResponseModel;
+import com.example.requisitionandapproval.model.APIModels.deliverItemModel;
+import com.example.requisitionandapproval.model.AdaptorModels.orderItemcls;
 
 import java.util.ArrayList;
 import java.util.HashMap;

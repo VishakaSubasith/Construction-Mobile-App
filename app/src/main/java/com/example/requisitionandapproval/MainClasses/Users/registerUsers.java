@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.requisitionandapproval.ApiClient.ApiClient;
 import com.example.requisitionandapproval.ApiClient.Endpoints;
+import com.example.requisitionandapproval.ConstantsClasses.MessagesClass;
 import com.example.requisitionandapproval.R;
 import com.example.requisitionandapproval.Notification.progressBar;
 
@@ -29,7 +30,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class registerUsers extends AppCompatActivity {
     ApiClient apiClient = new ApiClient();
-
+    MessagesClass messagesClass;
     private Retrofit retrofit;
     private Endpoints endpoints;
     private String Base_URL = apiClient.getBASE_URL();
@@ -104,15 +105,15 @@ public class registerUsers extends AppCompatActivity {
                             System.out.println("PAAAAAAAAS");
                             System.out.println("adawqq"+response.code() );
                             if(response.code() == 404){
-                                Toast.makeText(registerUsers.this, "Please fill all required fields!", Toast.LENGTH_LONG).show();
+
                                 new SweetAlertDialog(registerUsers.this,SweetAlertDialog.WARNING_TYPE)
-                                        .setTitleText("Please fill all required fields!")
+                                        .setTitleText(messagesClass.requredField)
                                         .show();
 
                             }else {
 
                                 new SweetAlertDialog(registerUsers.this,SweetAlertDialog.SUCCESS_TYPE)
-                                        .setTitleText("Registration Successful !")
+                                        .setTitleText(messagesClass.RegistrationSuccess)
                                         .show();
                                 Intent intent = new Intent(context, UserLogin.class);
                                 startActivity(intent);

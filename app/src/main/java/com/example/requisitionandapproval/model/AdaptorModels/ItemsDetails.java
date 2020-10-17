@@ -1,4 +1,4 @@
-package com.example.requisitionandapproval.model;
+package com.example.requisitionandapproval.model.AdaptorModels;
 
 import java.util.ArrayList;
 

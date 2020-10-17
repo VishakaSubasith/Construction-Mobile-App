@@ -1,33 +1,27 @@
 package com.example.requisitionandapproval.ApiClient;
-import com.example.requisitionandapproval.model.GetReqDetailsByID;
-import com.example.requisitionandapproval.model.GetReqNumbers;
-import com.example.requisitionandapproval.model.InprogressResponseModel;
-import com.example.requisitionandapproval.model.ItemResult;
+import com.example.requisitionandapproval.model.APIModels.GetReqDetailsByID;
+import com.example.requisitionandapproval.model.APIModels.GetReqNumbers;
+import com.example.requisitionandapproval.model.APIModels.InprogressResponseModel;
+import com.example.requisitionandapproval.model.APIModels.ItemResult;
 
-import com.example.requisitionandapproval.model.ManagerReqNumbers;
-import com.example.requisitionandapproval.model.OrderDoneModel;
-import com.example.requisitionandapproval.model.ReqApprovalModel;
-import com.example.requisitionandapproval.model.SupplierAvailability;
-import com.example.requisitionandapproval.model.SupplierItemDetails;
-import com.example.requisitionandapproval.model.deliverItemModel;
-import com.example.requisitionandapproval.model.getDetaislByManagerReqID;
-import com.example.requisitionandapproval.model.getOrderedItemList;
-import com.example.requisitionandapproval.model.inprogressItemIDModel;
-import com.example.requisitionandapproval.model.placedorderReqId;
-import com.example.requisitionandapproval.model.reqIDbysupplier;
-import com.example.requisitionandapproval.model.supplierModel;
-import com.example.requisitionandapproval.model.userLogin;
-import com.google.gson.JsonObject;
+import com.example.requisitionandapproval.model.APIModels.ManagerReqNumbers;
+import com.example.requisitionandapproval.model.APIModels.ReqApprovalModel;
+import com.example.requisitionandapproval.model.APIModels.SupplierAvailability;
+import com.example.requisitionandapproval.model.APIModels.SupplierItemDetails;
+import com.example.requisitionandapproval.model.APIModels.deliverItemModel;
+import com.example.requisitionandapproval.model.APIModels.getDetaislByManagerReqID;
+import com.example.requisitionandapproval.model.APIModels.getOrderedItemList;
+import com.example.requisitionandapproval.model.APIModels.inprogressItemIDModel;
+import com.example.requisitionandapproval.model.APIModels.placedorderReqId;
+import com.example.requisitionandapproval.model.APIModels.reqIDbysupplier;
+import com.example.requisitionandapproval.model.APIModels.supplierModel;
+import com.example.requisitionandapproval.model.APIModels.userLogin;
 
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
@@ -73,6 +67,9 @@ public interface Endpoints {
 
     @POST("/sitemanager/SiteManagergetAllDetails")
     Call<List<getOrderedItemList>> getOrderedItems(@Body HashMap<String, String> map);
+
+    @POST("/sitemanager/getPlaceOrders")
+    Call<List<getOrderedItemList>> getPlacedOrderedItems(@Body HashMap<String, String> map);
 
     //Site Manager clicked received Items
     @POST("/sitemanager/deleteReceivedItems")
