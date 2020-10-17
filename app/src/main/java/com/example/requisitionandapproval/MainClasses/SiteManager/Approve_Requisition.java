@@ -290,11 +290,6 @@ public class Approve_Requisition extends AppCompatActivity {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
 
-                final progressBar pbar = new progressBar(Approve_Requisition.this);
-                new CountDownTimer(2000, 1000) {
-                    public void onFinish() {
-                        pbar.dismissProgress();
-                        // my whole code
 
 
                         final Spinner reqId = (Spinner) findViewById(R.id.reqIDS);
@@ -306,13 +301,6 @@ public class Approve_Requisition extends AppCompatActivity {
                                 .show();
                     }
 
-                    public void onTick(long millisUntilFinished) {
-                        pbar.StartLoading();
-
-                    }
-                }.start();
-
-            }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
