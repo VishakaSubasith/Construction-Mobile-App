@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.requisitionandapproval.model.Itemcls;
+import com.example.requisitionandapproval.model.AdaptorModels.Itemcls;
 import com.example.requisitionandapproval.MainClasses.Items.itemList;
 import com.example.requisitionandapproval.R;
 

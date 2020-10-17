@@ -1,4 +1,4 @@
-package com.example.requisitionandapproval.model;
+package com.example.requisitionandapproval.model.APIModels;
 
 public class userLogin {
     private String username;

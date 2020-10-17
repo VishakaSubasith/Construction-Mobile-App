@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.example.requisitionandapproval.ApiClient.ApiClient;
 import com.example.requisitionandapproval.ApiClient.Endpoints;
 import com.example.requisitionandapproval.R;
-import com.example.requisitionandapproval.model.ItemResult;
+import com.example.requisitionandapproval.model.APIModels.ItemResult;
 
 import java.util.HashMap;
 import java.util.List;

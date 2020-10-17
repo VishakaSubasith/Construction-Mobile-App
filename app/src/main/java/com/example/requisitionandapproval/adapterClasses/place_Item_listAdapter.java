@@ -12,9 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.requisitionandapproval.R;
-import com.example.requisitionandapproval.model.Itemcls;
 import com.example.requisitionandapproval.MainClasses.Order.place_purchase_order_Item_List;
-import com.example.requisitionandapproval.model.orderItemcls;
+import com.example.requisitionandapproval.model.AdaptorModels.orderItemcls;
 
 public class place_Item_listAdapter extends RecyclerView.Adapter<place_Item_listAdapter.ViewHolder> {
 

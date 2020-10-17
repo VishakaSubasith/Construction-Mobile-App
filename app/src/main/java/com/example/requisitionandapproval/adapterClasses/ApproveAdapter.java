@@ -12,7 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.requisitionandapproval.R;
-import com.example.requisitionandapproval.model.ApproveModel;
+import com.example.requisitionandapproval.model.AdaptorModels.ApproveModel;
 
 import java.util.List;
 

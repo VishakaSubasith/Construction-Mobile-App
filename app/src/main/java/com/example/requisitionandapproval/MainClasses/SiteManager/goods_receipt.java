@@ -16,12 +16,13 @@ import android.widget.TextView;
 
 import com.example.requisitionandapproval.ApiClient.ApiClient;
 import com.example.requisitionandapproval.ApiClient.Endpoints;
+import com.example.requisitionandapproval.ConstantsClasses.MessagesClass;
 import com.example.requisitionandapproval.R;
 import com.example.requisitionandapproval.adapterClasses.OrderAdapter;
 import com.example.requisitionandapproval.Notification.dialog;
-import com.example.requisitionandapproval.model.getOrderedItemList;
-import com.example.requisitionandapproval.model.orderModel;
-import com.example.requisitionandapproval.model.placedorderReqId;
+import com.example.requisitionandapproval.model.APIModels.getOrderedItemList;
+import com.example.requisitionandapproval.model.AdaptorModels.orderModel;
+import com.example.requisitionandapproval.model.APIModels.placedorderReqId;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,6 +48,8 @@ public class goods_receipt extends AppCompatActivity {
     String name;
     TextView uname;
     Context context = this;
+    MessagesClass messagesClass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -148,7 +151,7 @@ public class goods_receipt extends AppCompatActivity {
                         getitems();
 
                         new SweetAlertDialog(goods_receipt.this,SweetAlertDialog.SUCCESS_TYPE)
-                                .setTitleText("Item Received Successful")
+                                .setTitleText(messagesClass.DeliverSuccess)
                                 .show();
 
                     }
@@ -169,7 +172,7 @@ public class goods_receipt extends AppCompatActivity {
         final Spinner orderreqIDS = findViewById(R.id.orderreqIDS);
         map.put("reqID", orderreqIDS.getSelectedItem().toString());
 
-        Call<List<getOrderedItemList>> call = endpoints.getOrderedItems(map);
+        Call<List<getOrderedItemList>> call = endpoints.getPlacedOrderedItems(map);
         ArrayList<String> arlist = new ArrayList<>( );
 
         call.enqueue(new Callback<List<getOrderedItemList>>() {

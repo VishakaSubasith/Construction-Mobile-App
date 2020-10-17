@@ -1,10 +1,11 @@
-package com.example.requisitionandapproval.model;
+package com.example.requisitionandapproval.model.APIModels;
 
-public class inprogressItemIDModel {
+public class deliverItemModel {
 
     private String[] result;
 
     public String[] getResult() {
         return result;
     }
+
 }

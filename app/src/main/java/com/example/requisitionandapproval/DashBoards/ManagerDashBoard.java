@@ -12,11 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.requisitionandapproval.ConstantsClasses.MessagesClass;
 import com.example.requisitionandapproval.MainClasses.Managers.ManagerApprove;
 import com.example.requisitionandapproval.R;
 
 public class ManagerDashBoard extends AppCompatActivity {
-
+    MessagesClass messagesClass;
     String username;
     ImageButton Goods ;
     TextView txtManager;
@@ -54,7 +55,7 @@ public class ManagerDashBoard extends AppCompatActivity {
         }
 
         this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, messagesClass.doubleBack, Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(new Runnable() {
 

@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.requisitionandapproval.ConstantsClasses.MessagesClass;
 import com.example.requisitionandapproval.Notification.MainActivity;
 import com.example.requisitionandapproval.R;
 
@@ -18,6 +19,7 @@ public class EmployeeDashboard extends AppCompatActivity {
 ImageButton addItem;
 Context context = this;
 TextView txtEmployee;
+    MessagesClass MessagesClass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +56,7 @@ TextView txtEmployee;
         }
 
         this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, MessagesClass.doubleBack, Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(new Runnable() {
 

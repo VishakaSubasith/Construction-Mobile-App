@@ -17,12 +17,13 @@ import android.widget.Toast;
 
 import com.example.requisitionandapproval.ApiClient.ApiClient;
 import com.example.requisitionandapproval.ApiClient.Endpoints;
+import com.example.requisitionandapproval.ConstantsClasses.MessagesClass;
 import com.example.requisitionandapproval.R;
 import com.example.requisitionandapproval.adapterClasses.ApproveAdapter;
-import com.example.requisitionandapproval.model.ApproveModel;
-import com.example.requisitionandapproval.model.ManagerReqNumbers;
-import com.example.requisitionandapproval.model.ReqApprovalModel;
-import com.example.requisitionandapproval.model.getDetaislByManagerReqID;
+import com.example.requisitionandapproval.model.AdaptorModels.ApproveModel;
+import com.example.requisitionandapproval.model.APIModels.ManagerReqNumbers;
+import com.example.requisitionandapproval.model.APIModels.ReqApprovalModel;
+import com.example.requisitionandapproval.model.APIModels.getDetaislByManagerReqID;
 import com.example.requisitionandapproval.Notification.progressBar;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ManagerApprove extends AppCompatActivity {
-
+    MessagesClass messagesClass;
     List<ApproveModel> approveModels;
     RecyclerView recyclerView;
     ReqApprovalModel[] rm;
@@ -223,8 +224,10 @@ public class ManagerApprove extends AppCompatActivity {
                                 pbar.dismissProgress();
                                 // my whole code
 
+                                getdetails_from_reqID(ManagerreqIDS.getSelectedItem().toString());
+
                                 new SweetAlertDialog(ManagerApprove.this,SweetAlertDialog.SUCCESS_TYPE)
-                                        .setTitleText("Order Approval Successful")
+                                        .setTitleText(messagesClass.orderSuccess)
                                         .show();
 
                             }
@@ -240,7 +243,7 @@ public class ManagerApprove extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<Void> call, Throwable t) {
                         new SweetAlertDialog(ManagerApprove.this,SweetAlertDialog.ERROR_TYPE)
-                                .setTitleText("Order Approval Unsuccessful")
+                                .setTitleText(messagesClass.orderFail)
                                 .show();
                         System.out.println("fail");
                     }
@@ -273,12 +276,13 @@ public class ManagerApprove extends AppCompatActivity {
                         // my whole code
 
                         final Spinner reqId = (Spinner) findViewById(R.id.ManagerreqIDS);
-                        new SweetAlertDialog(ManagerApprove.this,SweetAlertDialog.SUCCESS_TYPE)
-                                .setTitleText("Order Decline Successful")
-                                .show();
-                        //Toast.makeText(ManagerApprove.this,"Decline Successful",Toast.LENGTH_LONG).show();
                         String RequisitionId = reqId.getSelectedItem().toString();
                         getdetails_from_reqID(RequisitionId);
+                        new SweetAlertDialog(ManagerApprove.this,SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText(messagesClass.orderDecline)
+                                .show();
+                        //Toast.makeText(ManagerApprove.this,"Decline Successful",Toast.LENGTH_LONG).show();
+
 
                     }
 

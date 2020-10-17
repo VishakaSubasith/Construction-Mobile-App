@@ -12,30 +12,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.requisitionandapproval.ApiClient.ApiClient;
 import com.example.requisitionandapproval.ApiClient.Endpoints;
-import com.example.requisitionandapproval.MainClasses.Order.place_purchase_order_Item_List;
-import com.example.requisitionandapproval.MainClasses.SiteManager.Approve_Requisition;
-import com.example.requisitionandapproval.MainClasses.SiteManager.goods_receipt;
+import com.example.requisitionandapproval.ConstantsClasses.MessagesClass;
 import com.example.requisitionandapproval.R;
 import com.example.requisitionandapproval.adapterClasses.ApproveAdapter;
-import com.example.requisitionandapproval.adapterClasses.place_Item_listAdapter;
 import com.example.requisitionandapproval.adapterClasses.supplierOrderAdaptor;
-import com.example.requisitionandapproval.model.ApproveModel;
-import com.example.requisitionandapproval.model.GetReqDetailsByID;
-import com.example.requisitionandapproval.model.GetReqNumbers;
-import com.example.requisitionandapproval.model.ReqApprovalModel;
-import com.example.requisitionandapproval.model.SupplierItemDetails;
-import com.example.requisitionandapproval.model.SupplierOrderMdel;
-import com.example.requisitionandapproval.model.getOrderedItemList;
-import com.example.requisitionandapproval.model.orderItemcls;
-import com.example.requisitionandapproval.model.reqIDbysupplier;
-import com.google.gson.Gson;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.requisitionandapproval.model.AdaptorModels.ApproveModel;
+import com.example.requisitionandapproval.model.APIModels.ReqApprovalModel;
+import com.example.requisitionandapproval.model.APIModels.SupplierItemDetails;
+import com.example.requisitionandapproval.model.AdaptorModels.SupplierOrderMdel;
+import com.example.requisitionandapproval.model.APIModels.reqIDbysupplier;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,6 +49,7 @@ public class SupplierProfile extends AppCompatActivity {
     private Endpoints endpoints;
     private String Base_URL = apiClient.getBASE_URL();
     String username;
+    com.example.requisitionandapproval.ConstantsClasses.MessagesClass MessagesClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -235,7 +224,7 @@ public class SupplierProfile extends AppCompatActivity {
 
 
                             new SweetAlertDialog(SupplierProfile.this,SweetAlertDialog.SUCCESS_TYPE)
-                                    .setTitleText("Item deliver Successful")
+                                    .setTitleText(MessagesClass.DeliverSuccess)
                                     .show();
 
                         }

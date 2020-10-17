@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.requisitionandapproval.ConstantsClasses.MessagesClass;
 import com.example.requisitionandapproval.MainClasses.SiteManager.Approve_Requisition;
 import com.example.requisitionandapproval.MainClasses.SiteManager.goods_receipt;
 import com.example.requisitionandapproval.MainClasses.SiteManager.place_purchase_Order_List;
@@ -18,6 +19,7 @@ import com.example.requisitionandapproval.R;
 public class SiteManagerDashboard extends AppCompatActivity {
     ImageButton approve,goods,purchaseorder;
     TextView txtSitemager;
+    MessagesClass messagesClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +73,7 @@ public class SiteManagerDashboard extends AppCompatActivity {
         }
 
         this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, messagesClass.doubleBack, Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(new Runnable() {
 

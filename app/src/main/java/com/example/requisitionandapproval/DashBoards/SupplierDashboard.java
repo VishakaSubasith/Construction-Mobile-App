@@ -4,12 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatRadioButton;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -18,12 +16,12 @@ import android.widget.Toast;
 
 import com.example.requisitionandapproval.ApiClient.ApiClient;
 import com.example.requisitionandapproval.ApiClient.Endpoints;
-import com.example.requisitionandapproval.MainClasses.SiteManager.goods_receipt;
+import com.example.requisitionandapproval.ConstantsClasses.MessagesClass;
 import com.example.requisitionandapproval.MainClasses.Suppliers.DeliverdItems;
 import com.example.requisitionandapproval.MainClasses.Suppliers.SupplierProfile;
 import com.example.requisitionandapproval.MainClasses.Suppliers.inprogressItemsInsupplier;
 import com.example.requisitionandapproval.R;
-import com.example.requisitionandapproval.model.SupplierAvailability;
+import com.example.requisitionandapproval.model.APIModels.SupplierAvailability;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -39,7 +37,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SupplierDashboard extends AppCompatActivity {
-
+    MessagesClass messagesClass;
     String EXTRA_SESSION_ID;
     ImageView supplierr,Btninprogress,BtnDelivered;
     AppCompatRadioButton rbAvailable, rbNotAvailable;
@@ -193,12 +191,12 @@ public class SupplierDashboard extends AppCompatActivity {
 
                 if (status == "available"){
                     new SweetAlertDialog(SupplierDashboard.this,SweetAlertDialog.SUCCESS_TYPE)
-                            .setTitleText("your status is AVAILABLE !")
+                            .setTitleText(messagesClass.available)
                             .show();
                 }else {
 
                     new SweetAlertDialog(SupplierDashboard.this, SweetAlertDialog.SUCCESS_TYPE)
-                            .setTitleText("your status is UNAVAILABLE !")
+                            .setTitleText(messagesClass.unavailable)
                             .show();
                 }
             }
@@ -228,7 +226,7 @@ public class SupplierDashboard extends AppCompatActivity {
         }
 
         this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, messagesClass.doubleBack, Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(new Runnable() {
 

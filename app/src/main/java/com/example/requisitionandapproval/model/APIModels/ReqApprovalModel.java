@@ -1,4 +1,4 @@
-package com.example.requisitionandapproval.model;
+package com.example.requisitionandapproval.model.APIModels;
 
 import java.util.ArrayList;
 

@@ -6,17 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.requisitionandapproval.ApiClient.ApiClient;
 import com.example.requisitionandapproval.ApiClient.Endpoints;
-import com.example.requisitionandapproval.model.ItemResult;
-import com.example.requisitionandapproval.model.Itemcls;
+import com.example.requisitionandapproval.model.APIModels.ItemResult;
+import com.example.requisitionandapproval.model.AdaptorModels.Itemcls;
 import com.example.requisitionandapproval.R;
 import com.example.requisitionandapproval.adapterClasses.itemAdapter;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
