@@ -57,9 +57,7 @@ public class place_Purchase_order extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place__purchase_order);
-        new SweetAlertDialog(place_Purchase_order.this,SweetAlertDialog.SUCCESS_TYPE)
-                .setTitleText("Order Approval Successful")
-                .show();
+
         Intent intent = getIntent();
         name = intent.getStringExtra("name1");
         uname = findViewById(R.id.uname);
@@ -285,10 +283,10 @@ public class place_Purchase_order extends AppCompatActivity {
                                         .show();
                                 //Toast.makeText(place_Purchase_order.this, "Order placed successful!", Toast.LENGTH_LONG).show();
                                 System.out.println("adawqq"+response.code() );
-//
-//                                Intent intent1 = new Intent(place_Purchase_order.this, place_purchase_Order_List.class);
-//                                intent1.putExtra("name",name);
-//                                startActivity(intent1);
+
+                                Intent intent1 = new Intent(place_Purchase_order.this, place_purchase_Order_List.class);
+                                intent1.putExtra("name",name);
+                                startActivity(intent1);
                             }
 
                         }
