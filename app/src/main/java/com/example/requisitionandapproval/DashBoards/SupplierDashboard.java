@@ -12,6 +12,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +49,7 @@ public class SupplierDashboard extends AppCompatActivity {
     private Retrofit retrofit;
     private Endpoints endpoints;
     private String Base_URL = apiClient.getBASE_URL();
+    RadioGroup availabilityStatus;
 //    String username ="abc";
 
     @Override
@@ -60,6 +62,7 @@ public class SupplierDashboard extends AppCompatActivity {
         BtnDelivered = findViewById(R.id.btnDelivered);
         txtUsername = findViewById(R.id.txtUsername);
         supplierr = findViewById(R.id.supplierr);
+        availabilityStatus = findViewById(R.id.availabilityStatus);
 
         retrofit = new Retrofit.Builder().baseUrl(Base_URL).addConverterFactory(GsonConverterFactory.create()).build();
         endpoints = retrofit.create(Endpoints.class);
@@ -68,7 +71,7 @@ public class SupplierDashboard extends AppCompatActivity {
 
         Intent intent = getIntent();
         EXTRA_SESSION_ID = intent.getStringExtra("EXTRA_SESSION_ID");
-
+        initialAvailability(EXTRA_SESSION_ID);
 
         supplierr.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,23 +102,48 @@ public class SupplierDashboard extends AppCompatActivity {
         });
 
 
+        availabilityStatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    rbNotAvailable.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                            if (isChecked){
+
+                            }else {
+                                checkAvailable(EXTRA_SESSION_ID, "available");
+                            }
 
 
-            rbAvailable.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    checkAvailable(EXTRA_SESSION_ID, "available");
-                }
-            });
-            rbNotAvailable.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    checkAvailable(EXTRA_SESSION_ID, "notavailable");
-                }
-            });
 
-        initialAvailability(EXTRA_SESSION_ID);
+                        }
+                    });
+
+
+                    rbAvailable.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                            if (isChecked){
+
+                            }else {
+                                checkAvailable(EXTRA_SESSION_ID, "notavailable");
+
+                            }
+
+                        }
+                    });
+
+
+            }
+        });
+
+
+
         txtUsername.setText(EXTRA_SESSION_ID);
+
 
 
     }
