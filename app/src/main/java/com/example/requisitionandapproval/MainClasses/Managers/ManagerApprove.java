@@ -224,6 +224,8 @@ public class ManagerApprove extends AppCompatActivity {
                                 pbar.dismissProgress();
                                 // my whole code
 
+                                getdetails_from_reqID(ManagerreqIDS.getSelectedItem().toString());
+
                                 new SweetAlertDialog(ManagerApprove.this,SweetAlertDialog.SUCCESS_TYPE)
                                         .setTitleText(messagesClass.orderSuccess)
                                         .show();
@@ -274,12 +276,13 @@ public class ManagerApprove extends AppCompatActivity {
                         // my whole code
 
                         final Spinner reqId = (Spinner) findViewById(R.id.ManagerreqIDS);
+                        String RequisitionId = reqId.getSelectedItem().toString();
+                        getdetails_from_reqID(RequisitionId);
                         new SweetAlertDialog(ManagerApprove.this,SweetAlertDialog.SUCCESS_TYPE)
                                 .setTitleText(messagesClass.orderDecline)
                                 .show();
                         //Toast.makeText(ManagerApprove.this,"Decline Successful",Toast.LENGTH_LONG).show();
-                        String RequisitionId = reqId.getSelectedItem().toString();
-                        getdetails_from_reqID(RequisitionId);
+
 
                     }
 
