@@ -130,19 +130,8 @@ public class place_Purchase_order extends AppCompatActivity {
                     cOndelivery.setVisibility(View.VISIBLE);
                     cardpaymetlayout.setVisibility(View.GONE);
                 }
-
-
-
-
-
-
-
             }
         });
-
-
-
-
 
         Addrequisition.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,9 +141,15 @@ public class place_Purchase_order extends AppCompatActivity {
                 EditText requireDate = findViewById(R.id.requireDate);
                 Spinner Suplier = findViewById(R.id.supplyspin);
 
-                if (addline1.getText().toString().isEmpty() || addline2.getText().toString().isEmpty()|| requireDate.getText().toString().isEmpty()|| Suplier.getCount()==0){
-                    //Toast.makeText(place_Purchase_order.this,"Please Fill All fields",Toast.LENGTH_LONG).show();
-                    new SweetAlertDialog(place_Purchase_order.this,SweetAlertDialog.WARNING_TYPE)
+                validation addressValidation = new validation();
+
+                addressValidation.setAddline1(addline1.getText().toString());
+                addressValidation.setAddline2(addline2.getText().toString());
+                addressValidation.setRequireDate(requireDate.getText().toString());
+                addressValidation.setSuplier(Suplier.getCount());
+
+                if (addressValidation.addressValidation()== false){
+                   new SweetAlertDialog(place_Purchase_order.this,SweetAlertDialog.WARNING_TYPE)
                             .setTitleText(messagesClass.requredField)
                             .show();
                 }else{
@@ -189,28 +184,10 @@ public class place_Purchase_order extends AppCompatActivity {
                         new SweetAlertDialog(place_Purchase_order.this,SweetAlertDialog.WARNING_TYPE)
                                 .setTitleText("Please Select Payment Methods")
                                 .show();
-
                     }
-
-//
-//                    placeOrder();
-//                    new SweetAlertDialog(place_Purchase_order.this,SweetAlertDialog.SUCCESS_TYPE)
-//                            .setTitleText("Order Placed Successful")
-//                            .show();
-
                 }
-
-
-
-
             }
         });
-
-
-
-
-
-
     }
 
     public void getAllSuppliers() {
