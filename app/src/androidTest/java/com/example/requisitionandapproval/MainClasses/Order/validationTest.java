@@ -12,8 +12,6 @@ public class validationTest {
 
         assertEquals("q",validation.getAddline1());
     }
-
-
     @Test
     public void getAddline2() {
         assertEquals("q",validation.getAddline2());
