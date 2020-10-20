@@ -42,7 +42,7 @@
                 app:layout_constraintTop_toBottomOf="@id/titleTextView">
 
                 <EditText
-                    android:id="@+id/yearTextView"
+                    android:id="@+id/QTY"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -54,7 +54,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/yearTextView3"
+                    android:id="@+id/PRICE"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text=""
@@ -90,15 +90,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-                <Button
-                    android:id="@+id/tick"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="15dp"
-                    android:background="@drawable/ic_baseline_check_24"
-                    app:layout_constraintEnd_toEndOf="@+id/yearTextView3"
-                    app:layout_constraintTop_toBottomOf="@+id/yearTextView3" />
+<!--                <Button-->
+<!--                    android:id="@+id/tick"-->
+<!--                    android:layout_width="25dp"-->
+<!--                    android:layout_height="25dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:layout_marginRight="15dp"-->
+<!--                    android:background="@drawable/ic_baseline_check_24"-->
+<!--                    app:layout_constraintEnd_toEndOf="@+id/yearTextView3"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/yearTextView3" />-->
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
